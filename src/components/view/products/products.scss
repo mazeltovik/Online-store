@@ -1,0 +1,200 @@
+$clr-primary-5:#ab7a5f;
+$clr-grey-10: #f1f5f8;
+$clr-grey-5:#617d98;
+$clr-red-dark: #bb2525;
+.form_control{
+    margin-bottom: 1.25rem;
+    & h5{
+        margin-bottom: 0.5rem;
+        font-size: 1rem;
+        text-transform: capitalize;
+    }
+    & .null{
+        display: block;
+        margin: 0.25em 0px;
+        padding: 0.25rem 0px;
+        text-transform: capitalize;
+        background: transparent;
+        border-top: none;
+        border-right: none;
+        border-left: none;
+        border-image: initial;
+        border-bottom: 1px solid transparent;
+        letter-spacing: 0.1rem;
+        color: $clr-grey-5;
+        cursor: pointer;
+    }
+    & .active{
+        border-color: $clr-grey-5;
+    }
+}
+
+.search {
+    width: 12rem;
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    svg {
+        height: 4rem;
+        padding: 1.5rem;
+        position: absolute;
+        cursor: pointer;
+    }
+    &_icon {
+        fill: $clr-grey-5;
+        z-index: 99;
+        right: 134px;
+    }
+    &_delete {
+        fill: $clr-grey-5;
+        right: 0;
+        display: none;
+    }
+    .search_input{
+        box-shadow: 0 0 10px 5px $clr-grey-5;
+        border: none;
+        padding: 0.5rem;
+        background: $clr-grey-10;
+        border-radius: 0.25rem;
+        border-color: transparent;
+        letter-spacing: 0.1rem;
+        width: 10rem;
+        padding-left: 22px;
+        padding-right: 29px;
+    }
+}
+
+
+.colors{
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    cursor: pointer;
+    & .all-btn{
+        display: flex;
+        -webkit-box-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        justify-content: center;
+        margin-right: 0.5rem;
+        opacity: 0.5;
+    }
+    & .color-btn{
+        width: 1rem;
+        height: 1rem;
+        border-radius: 50%;
+        background: rgb(34, 34, 34);
+        margin-right: 0.5rem;
+        border: none;
+        opacity: 0.5;
+        display: flex;
+        -webkit-box-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        justify-content: center;
+    }
+    & .red{
+        background: red;
+    }
+    & .green{
+        background: rgb(0, 255, 0);
+    }
+    & .blue{
+        background: rgb(0, 0, 255);
+    }
+    & .black{
+        background: rgb(0, 0, 0);
+    }
+    & .orange{
+        background: rgb(255, 185, 0);
+    }
+    & .active_color{
+        background-image: url('../../../assets/check-solid.svg');
+        background-repeat: no-repeat;
+        object-fit: cover;
+        opacity: 1;
+    }
+    & .active_all_color{
+        opacity: 1;
+        border-bottom: 1px solid $clr-grey-5;
+    }
+}
+
+.main_products{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem 1.5rem;
+}
+
+.products_container{
+    position: relative;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    & .buttons{
+        display: flex;
+        padding-top: 1rem;
+        gap:1rem;
+    }
+    & .add-btn{
+        background: $clr-red-dark;
+        width: 50%;
+        color: white;
+        padding: 0.25rem 0.5rem;
+        border-radius: 0.25rem;
+        cursor: pointer;
+    }
+}
+
+.main_img img{
+    height: 175px;
+    width:100%;
+    display: block;
+    object-fit: cover;
+}
+
+.product_footer{
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Josefin Sans', sans-serif;
+    & p{
+        color:$clr-primary-5;
+    }
+    & h5{
+        font-weight: 400;
+        font-size: 1rem;
+        text-transform: capitalize;
+        line-height: 1.25;
+        letter-spacing: 0.1rem;
+    }
+}
+
+.disable{
+    display: none;
+}
+
+.clear-btn{
+    background: $clr-red-dark;
+    color: white;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    cursor: pointer;
+}
+
+.sort_container{
+    display: grid;
+    align-items: center;
+    margin-bottom: 2rem;
+    & p, form{
+        font-family: 'Josefin Sans', sans-serif;
+    }
+}
+
+@media only screen and (max-width: 769px) {
+    .main_products{
+        grid-template-columns: 1fr;
+        justify-items: center;
+    }
+}

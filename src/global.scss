@@ -1,0 +1,174 @@
+$clr-gray200: #eef1f6;
+$clr-gray600: #2a324b;
+$clr-primary-5:#ab7a5f;
+$clr-red-dark: #bb2525;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.nav {
+    width: 85%;
+    margin: 0px auto;
+    border-bottom: 1px solid $clr-gray200;
+    &_toggle {
+      position: absolute;
+      cursor: pointer;
+      margin: 0rem 1rem;
+      right: 0;
+  
+      svg {
+        width: 1.5rem;
+      }
+  
+      .close {
+        display: none;
+        fill:$clr-red-dark;
+      }
+  
+      .menu {
+        margin-top: 0.2rem;
+        fill: $clr-primary-5
+      }
+    }
+  
+    &_checkbox {
+      display: none;
+    }
+  
+    &_menu {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      align-items: center;
+      margin: 1rem;
+  
+      li {
+        list-style: none;
+        display: none;
+        font-family: 'Josefin Sans', sans-serif;
+        text-transform: capitalize;
+        font-size: 1rem;
+  
+        &:first-child {
+          margin-right: auto;
+          display: block;
+        }
+      }
+  
+      a {
+        text-decoration: none;
+        color: inherit;
+        font-size: 1.2rem;
+      }
+      a:hover{
+        transition: 0.2s;
+        border-bottom: 0.2rem solid #ab7a5f;
+      }
+  
+      svg {
+        width: 1.5rem;
+      }
+    }
+  }
+
+  .cart{
+    background-image: url('assets/cart-shopping-solid.svg');
+    display: block;
+    width: 25px;
+    height: 25px;
+    background-size: cover;
+  }
+  .cart_counter{
+    padding-left: 29px;
+  }
+
+  
+  // Toggle the hamburger menu in mobile view
+  #nav_checkbox:checked ~ ul.nav_menu li {
+    display: block;
+  }
+  
+  //Change from menu to close icon on tap
+  #nav_checkbox:checked ~ label.nav_toggle .close {
+    display: block;
+  }
+  
+  #nav_checkbox:checked ~ label.nav_toggle .menu {
+    display: none;
+  }
+
+  .main{
+    width: 85%;
+    display: grid;
+    gap: 3rem 1.5rem;
+    margin: 4rem auto;
+    grid-template-columns: 1fr;
+    
+  }
+
+  footer {
+    display: flex;
+    padding: 10px 30px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    gap:1rem;
+    & .github__logo{
+      margin-right: auto;
+      display: block;
+      width: 25px;
+      height: 25px;
+      background-image: url('assets/github-brands.svg');
+      background-size: cover;
+    }
+    & .logo{
+      width: 210px;
+      height: 100%;
+      p{
+        text-align: center;
+      }
+      & .logo__link{
+        display: block;
+        width: 200px;
+        height: 74px;
+        background-image: url('assets/rs_school_logo.svg');
+        background-size: cover;
+      }
+    }
+  }
+
+  
+  // Desktop view
+  @media only screen and (min-width: 769px) {
+    .nav {
+      &_toggle {
+        display: none;
+      }
+  
+      &_menu {
+        flex-direction: row;
+  
+        li {
+          display: block;
+        }
+      }
+    }
+    .main{
+      width: 85%;
+      gap: 3rem 1.5rem;
+      margin: 4rem auto;
+      grid-template-columns: 200px 1fr;
+    }
+
+    footer {
+      flex-direction: row;
+      .logo p{
+        text-align: left;
+      }
+    }
+}
